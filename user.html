@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome Page</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: 'bg.jpg';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    color: #ccc;
+  }
+
+  .welcome-container {
+    margin-top: 100px;
+  }
+
+  .input-group {
+    margin-bottom: 20px;
+  }
+
+  .input-group label {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  .input-group input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+
+  .proceed-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .proceed-button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body background="bgg.jpg">
+<div class="welcome-container">
+  <h2>Welcome to Our Application</h2>
+  <form id="nameForm">
+    <div class="input-group">
+      <label for="username">Please enter your name:</label>
+      <input type="text" id="username" name="username" required>
+    </div>
+    <button class="proceed-button" type="submit">Proceed</button>
+  </form>
+</div>
+
+<script>
+  document.getElementById('nameForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value;
+    localStorage.setItem('username', username); // Store username in local storage
+    window.location.href = "loading.html"; // Redirect to the loading page
+  });
+</script>
+</body>
+</html>
